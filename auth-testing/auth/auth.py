@@ -34,6 +34,14 @@ def login(username, password):
     hashed = _hash_password(password)
     return users.get(username) == hashed
 
+def delete_account(username, password):
+    users = _load_users()
+    if users.get(username) == _hash_password(password):
+        del users[username]
+        _save_users(users)
+        return True
+    return False
+
 def username_taken(username):
     users = _load_users()
     return username in users
