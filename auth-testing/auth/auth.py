@@ -2,7 +2,6 @@ import hashlib
 import json
 import os
 
-
 USERS_FILE = "users.json"
 
 def _load_users():
