@@ -97,7 +97,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_auth.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/test_auth.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -106,7 +106,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_auth.test_create_account_with_exisiting_username" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for tests.test_auth" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="AuthTesting" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -118,11 +118,11 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_auth.test_create_account_with_exisiting_username&quot;" />
+      <option name="_new_target" value="&quot;tests.test_auth&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_auth.test_login" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for tests.test_auth" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="AuthTesting" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -134,7 +134,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_auth.test_login&quot;" />
+      <option name="_new_target" value="&quot;tests.test_auth&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -150,7 +150,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/test_auth.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_auth.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
@@ -158,8 +158,8 @@
       <list>
         <item itemvalue="Python tests.Python tests in test_auth.py" />
         <item itemvalue="Python.auth" />
-        <item itemvalue="Python tests.Python tests for test_auth.test_create_account_with_exisiting_username" />
-        <item itemvalue="Python tests.Python tests for test_auth.test_login" />
+        <item itemvalue="Python tests.Python tests for tests.test_auth" />
+        <item itemvalue="Python tests.Python tests for tests.test_auth" />
         <item itemvalue="Python.test_auth" />
       </list>
     </recent_temporary>
