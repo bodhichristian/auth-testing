@@ -34,3 +34,6 @@ def login(username, password):
     hashed = _hash_password(password)
     return users.get(username) == hashed
 
+def username_taken(username):
+    users = _load_users()
+    return username in users
