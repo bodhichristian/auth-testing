@@ -1,6 +1,7 @@
 import os
 import pytest
 import auth.auth as auth
+from models.user import User
 
 # Setup: Replace the users.json file with a temporary file for testing
 # Tear down: Restore original contents
@@ -19,27 +20,32 @@ def test_create_account():
     password = 'password'
 
     auth.create_account(username, password)
-    assert auth.username_taken(username)
+
+    # Verify that the user has been added to the file
+    users = auth._load_users()
+    assert username in users
+    assert users[username].username == username
+    assert users[username].password_hash != password  # Password should be hashed
+    assert users[username].created_at is not None
 
 def test_create_account_with_existing_username():
     username = 'testuser'
     password = 'password'
 
     auth.create_account(username, password)
+    # Try to create the account again, should fail
     assert not auth.create_account(username, password)
 
 def test_create_account_with_blank_username():
     username = ''
     password = 'password'
 
-    auth.create_account(username, password)
     assert not auth.create_account(username, password)
 
 def test_create_account_with_blank_password():
     username = 'userdude'
     password = ''
 
-    auth.create_account(username, password)
     assert not auth.create_account(username, password)
 
 def test_login_with_correct_password():
@@ -60,19 +66,18 @@ def test_login_with_nonexistent_username():
     username = 'brandnewuser'
     password = 'security'
 
-    auth.create_account(username, password)
-    assert not auth.login(username, 'random')
+    assert not auth.login(username, password)
 
 def test_password_is_hashed():
     raw = 'password'
     hashed = auth._hash_password(raw)
 
     assert hashed != raw
-    assert len(hashed) == 64 # SHA-256 length
+    assert len(hashed) == 64  # SHA-256 length
 
 def test_password_case_sensitivity():
     username = 'Chad'
-    password ='Password'
+    password = 'Password'
 
     auth.create_account(username, password)
     assert not auth.login(username, password.lower())
@@ -83,5 +88,13 @@ def test_account_deletion():
 
     auth.create_account(username, password)
     assert auth.login(username, password)
+
+    # Check that the user exists before deletion
+    users = auth._load_users()
+    assert username in users
+
     assert auth.delete_account(username, password)
-    assert not auth.login(username, password)
+
+    # Verify that the user has been deleted
+    users = auth._load_users()
+    assert username not in users

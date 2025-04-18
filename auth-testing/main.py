@@ -1,5 +1,3 @@
-# main.py
-
 from ui.menu import show_menu
 
 if __name__ == '__main__':

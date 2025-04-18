@@ -4,7 +4,6 @@ import getpass
 from ui.session import start_session
 from auth.auth import create_account, login, username_taken
 
-
 def show_menu():
     while True:
         print('\n1. Create account')
@@ -25,6 +24,8 @@ def show_menu():
 def handle_create_account():
     while True:
         username = input('Create a username: ')
+        if not username:
+            print('Please enter a username.')
         if username_taken(username):
             print('🚨 Username unavailable. Try again.')
         else:
@@ -33,6 +34,8 @@ def handle_create_account():
     while True:
         pw1 = getpass.getpass('Create a password: ')
         pw2 = getpass.getpass('Confirm your password: ')
+        if not pw1:
+            print('Password may not be left blank.')
         if pw1 != pw2:
             print('❌ Passwords do not match. Try again.')
         else:
@@ -43,7 +46,7 @@ def handle_create_account():
     else:
         print('❌ Account not created.')
 
-    pw1 = pw2 = None
+    pw1 = pw2 = None # Clear from memory
 
 def handle_login():
     username = input('Username  : ')
