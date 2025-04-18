@@ -5,9 +5,9 @@ import os
 USERS_FILE = "users.json"
 
 def _load_users():
-    if not os.path.exists("users.json"):
+    if not os.path.exists(USERS_FILE):
         return {}
-    with open("users.json", "r") as f:
+    with open(USERS_FILE, "r") as f:
         try:
             return json.load(f)
         except json.JSONDecodeError:
