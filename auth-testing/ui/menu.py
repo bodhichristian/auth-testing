@@ -30,11 +30,20 @@ def handle_create_account():
         else:
             break
 
-    password = getpass.getpass('Create a password: ')
-    if create_account(username, password):
+    while True:
+        pw1 = getpass.getpass('Create a password: ')
+        pw2 = getpass.getpass('Confirm your password: ')
+        if pw1 != pw2:
+            print('❌ Passwords do not match. Try again.')
+        else:
+            break
+
+    if create_account(username, pw1):
         print('✅ Account created.')
     else:
         print('❌ Account not created.')
+
+    pw1 = pw2 = None
 
 def handle_login():
     username = input('Username  : ')

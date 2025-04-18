@@ -2,6 +2,8 @@ import os
 import pytest
 import auth.auth as auth
 
+# Setup: Replace the users.json file with a temporary file for testing
+# Tear down: Restore original contents
 @pytest.fixture(autouse=True)
 def temp_users_file(tmp_path):
     original = auth.USERS_FILE
@@ -43,8 +45,8 @@ def test_create_account_with_blank_password():
 def test_login_with_correct_password():
     username = 'newuser'
     password = 'supersecure'
-    auth.create_account(username, password)
 
+    auth.create_account(username, password)
     assert auth.login(username, password)
 
 def test_login_fails_with_incorrect_password():
@@ -59,12 +61,12 @@ def test_login_with_nonexistent_username():
     password = 'security'
 
     auth.create_account(username, password)
-
     assert not auth.login(username, 'random')
 
 def test_password_is_hashed():
     raw = 'password'
     hashed = auth._hash_password(raw)
+
     assert hashed != raw
     assert len(hashed) == 64 # SHA-256 length
 
@@ -80,7 +82,6 @@ def test_account_deletion():
     password = 'password123'
 
     auth.create_account(username, password)
-
     assert auth.login(username, password)
     assert auth.delete_account(username, password)
     assert not auth.login(username, password)
