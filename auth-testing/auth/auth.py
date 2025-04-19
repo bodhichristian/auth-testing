@@ -1,4 +1,5 @@
 import hashlib
+import getpass
 import json
 import os
 from models.user import User
@@ -21,6 +22,21 @@ def _save_users(users):
     with open(USERS_FILE, 'w') as f:
         json.dump(users_data, f)
 
+def create_password():
+    while True:
+        pw1 = getpass.getpass('Create a password: ')
+        pw2 = getpass.getpass('Confirm your password: ')
+
+        if not pw1:
+            print('❌ Password may not be left blank.')
+            continue
+
+        if pw1 != pw2:
+            print('❌ Passwords do not match. Try again.')
+            continue
+
+        return pw1
+
 def _hash_password(password):
     return hashlib.sha256(password.encode()).hexdigest()
 
@@ -35,11 +51,14 @@ def create_account(username, password):
     _save_users(users)
     return True
 
+
 def login(username, password):
     users = _load_users()
     hashed = _hash_password(password)
     user = users.get(username)
-    return user and user.password_hash == hashed
+    if user and user.password_hash == hashed:
+        return user
+    return None
 
 def delete_account(username, password):
     users = _load_users()

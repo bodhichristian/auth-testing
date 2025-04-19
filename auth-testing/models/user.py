@@ -4,13 +4,13 @@ class User:
     def __init__(self, username: str, password_hash: str, created_on: str = None):
         self.username = username
         self.password_hash = password_hash
-        self.created_at = created_on or date.today().isoformat()  # YYYY-MM-DD
+        self.created_on = created_on or date.today().isoformat()  # YYYY-MM-DD
 
     def to_dict(self):
         return {
             "username": self.username,
             "password_hash": self.password_hash,
-            "created_at": self.created_at
+            "created_at": self.created_on
         }
 
     @staticmethod

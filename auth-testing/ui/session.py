@@ -1,9 +1,11 @@
 from auth.auth import delete_account
 import getpass
 
-def start_session(username):
+def start_session(user):
     while True:
-        print(f'\nWelcome, {username}!')
+        print(f'\nWelcome, {user.username}!')
+        print(f'Account holder since {user.created_on}\n')
+        print('Menu')
         print('1. Delete account')
         print('2. Log out')
 
@@ -13,7 +15,7 @@ def start_session(username):
             confirm = input('Are you sure you want to delete your account? (y/n): ')
             if confirm.lower() == 'y':
                 password = getpass.getpass('Confirm your password: ')
-                if delete_account(username, password):
+                if delete_account(user.username, password):
                     print('🗑️ Account deleted.')
                     break
                 else:
