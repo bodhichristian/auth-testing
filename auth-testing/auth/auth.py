@@ -22,6 +22,18 @@ def _save_users(users):
     with open(USERS_FILE, 'w') as f:
         json.dump(users_data, f)
 
+def create_username():
+    while True:
+        username = input('Create a username: ')
+        if not username:
+            print('Please enter a username.')
+            continue
+        if username_taken(username):
+            print('🚨 Username unavailable. Try again.')
+            continue
+        else:
+            break
+
 def create_password():
     while True:
         pw1 = getpass.getpass('Create a password: ')
@@ -50,7 +62,6 @@ def create_account(username, password):
     users[username] = user
     _save_users(users)
     return True
-
 
 def login(username, password):
     users = _load_users()

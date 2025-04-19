@@ -24,22 +24,13 @@ def show_menu():
             print('Please select one of the available options.')
 
 def handle_create_account():
-    while True:
-        username = input('Create a username: ')
-        if not username:
-            print('Please enter a username.')
-        if username_taken(username):
-            print('🚨 Username unavailable. Try again.')
-        else:
-            break
-
+    username = auth.create_username()
     password = auth.create_password()
 
     if create_account(username, password):
         print('\n\n✅ Account created.')
-
     else:
-        print('❌ Account not created.')
+        print('❌ Account not created. Please try again.')
 
     password = None # Clear from memory
 
@@ -47,6 +38,7 @@ def handle_login():
     username = input('Username: ')
     password = getpass.getpass('Password: ')
     user = login(username, password)
+
     if user:
         print('✅ Login successful.')
         start_session(user)
