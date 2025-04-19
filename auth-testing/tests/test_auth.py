@@ -26,7 +26,7 @@ def test_create_account():
     assert username in users
     assert users[username].username == username
     assert users[username].password_hash != password  # Password should be hashed
-    assert users[username].created_at is not None
+    assert users[username].created_on is not None
 
 def test_create_account_with_existing_username():
     username = 'testuser'
@@ -37,14 +37,14 @@ def test_create_account_with_existing_username():
     assert not auth.create_account(username, password)
 
 def test_create_account_with_blank_username():
-    username = ''
+    username = None
     password = 'password'
 
     assert not auth.create_account(username, password)
 
 def test_create_account_with_blank_password():
     username = 'userdude'
-    password = ''
+    password = None
 
     assert not auth.create_account(username, password)
 

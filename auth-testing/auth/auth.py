@@ -53,6 +53,9 @@ def _hash_password(password):
     return hashlib.sha256(password.encode()).hexdigest()
 
 def create_account(username, password):
+    if username == None or password == None:
+        return False
+
     users = _load_users()
     if username in users:
         return False
