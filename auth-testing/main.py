@@ -1,4 +1,4 @@
-from ui.menu import show_menu
+from ui.main_menu import main_menu
 
 if __name__ == '__main__':
-    show_menu()
+    main_menu()

@@ -1,7 +1,7 @@
 from auth.auth import delete_account
 import getpass
 
-def start_session(user):
+def user_menu(user):
     while True:
         print(f'\nWelcome, {user.username}!')
         print(f'Account holder since {user.created_on}\n')

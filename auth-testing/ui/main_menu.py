@@ -1,12 +1,13 @@
-# ui/menu.py
+# ui/main_menu.py
 
 import getpass
 
 import auth.auth as auth
-from ui.session import start_session
+from auth.session import start_session
+from auth.token import generate_token
 from auth.auth import create_account, login, username_taken
 
-def show_menu():
+def main_menu():
     while True:
         print('\n1. Create account')
         print('2. Log in')
@@ -41,6 +42,7 @@ def handle_login():
 
     if user:
         print('✅ Login successful.')
-        start_session(user)
+        token = generate_token(user.id)
+        start_session(token)
     else:
         print('❌ Login failed.')

@@ -32,7 +32,7 @@ def create_username():
             print('🚨 Username unavailable. Try again.')
             continue
         else:
-            break
+            return username
 
 def create_password():
     while True:
@@ -56,12 +56,9 @@ def create_account(username, password):
     if username == None or password == None:
         return False
 
-    users = _load_users()
-    if username in users:
-        return False
-
     password_hash = _hash_password(password)
     user = User(username, password_hash)
+    users = _load_users()
     users[username] = user
     _save_users(users)
     return True
@@ -86,3 +83,11 @@ def delete_account(username, password):
 def username_taken(username):
     users = _load_users()
     return username in users
+
+def validate_user(id):
+    users = _load_users()
+    for user in users.values():
+        print(f"Checking user: {user.username}, id: {user.id}")
+        if user.id == id:
+            return user
+    return None
