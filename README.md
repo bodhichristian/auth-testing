@@ -1,2 +1,2 @@
 # auth-testing
-A CLI program for creating and managing users and user sessions.
+A simple command line program suitable for testing.
