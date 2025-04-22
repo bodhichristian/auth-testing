@@ -58,7 +58,11 @@ def create_account(username, password):
 
     password_hash = _hash_password(password)
     user = User(username, password_hash)
+
     users = _load_users()
+    if username in users:
+        return False
+
     users[username] = user
     _save_users(users)
     return True
@@ -87,7 +91,6 @@ def username_taken(username):
 def validate_user(id):
     users = _load_users()
     for user in users.values():
-        print(f"Checking user: {user.username}, id: {user.id}")
         if user.id == id:
             return user
     return None

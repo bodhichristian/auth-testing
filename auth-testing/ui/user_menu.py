@@ -7,7 +7,7 @@ def user_menu(user):
         print(f'Account holder since {user.created_on}\n')
         print('Menu')
         print('1. Delete account')
-        print('2. Log out')
+        print('2. Log out\n')
 
         choice = input('Select an option: ')
 

@@ -11,7 +11,7 @@ def main_menu():
     while True:
         print('\n1. Create account')
         print('2. Log in')
-        print('3. Exit')
+        print('3. Exit\n')
         choice = input('Select an option: ')
 
         if choice == '1':
@@ -19,10 +19,10 @@ def main_menu():
         elif choice == '2':
             handle_login()
         elif choice == '3':
-            print('✌️ Goodbye')
+            print('✌️ Goodbye\n')
             break
         else:
-            print('Please select one of the available options.')
+            print('Please select one of the available options.\n')
 
 def handle_create_account():
     username = auth.create_username()
@@ -41,8 +41,8 @@ def handle_login():
     user = login(username, password)
 
     if user:
-        print('✅ Login successful.')
+        print('\n🔑 Login successful.')
         token = generate_token(user.id)
         start_session(token)
     else:
-        print('❌ Login failed.')
+        print('\n❌ Login failed.')
