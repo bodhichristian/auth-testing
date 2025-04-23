@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="2186454b-78e1-47e0-840f-784c1bf79f23" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/main_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/main_menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/user_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/user_menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users.json" beforeDir="false" afterPath="$PROJECT_DIR$/users.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth/token.py" beforeDir="false" afterPath="$PROJECT_DIR$/auth/token.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_auth.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +45,7 @@
     "Python tests.Python tests for test_auth.test_create_account_with_exisiting_username.executor": "Run",
     "Python tests.Python tests for test_auth.test_create_account_with_existing_username.executor": "Run",
     "Python tests.Python tests for test_auth.test_login.executor": "Run",
+    "Python tests.Python tests for test_session.test_valid_token.executor": "Run",
     "Python tests.Python tests in test_auth.py.executor": "Run",
     "Python.auth.executor": "Run",
     "Python.main.executor": "Run",
@@ -72,7 +72,7 @@
       <recent name="$PROJECT_DIR$/tests" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests in test_auth.py">
+  <component name="RunManager" selected="Python tests.Python tests for test_session.test_valid_token">
     <configuration name="main_menu" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="AuthTesting" />
       <option name="ENV_FILES" value="" />
@@ -112,22 +112,6 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_auth.test_create_account" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="AuthTesting" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_auth.test_create_account&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <configuration name="Python tests for test_auth.test_create_account_with_existing_username" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="AuthTesting" />
       <option name="ENV_FILES" value="" />
@@ -144,19 +128,19 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for tests.test_auth" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test_session.test_valid_token" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="AuthTesting" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.test_auth&quot;" />
+      <option name="_new_target" value="&quot;test_session.test_valid_token&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -178,11 +162,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests for test_session.test_valid_token" />
         <item itemvalue="Python tests.Python tests in test_auth.py" />
         <item itemvalue="Python tests.Python tests for test_auth.test_create_account_with_existing_username" />
         <item itemvalue="Python.main_menu" />
         <item itemvalue="Python tests.Python tests for test_auth.test_account_deletion" />
-        <item itemvalue="Python tests.Python tests for test_auth.test_create_account" />
       </list>
     </recent_temporary>
   </component>
@@ -205,7 +189,7 @@
       <workItem from="1744802771804" duration="5026000" />
       <workItem from="1744895213110" duration="89000" />
       <workItem from="1744895313400" duration="17676000" />
-      <workItem from="1745249951061" duration="14158000" />
+      <workItem from="1745249951061" duration="15225000" />
     </task>
     <servers />
   </component>
@@ -227,6 +211,6 @@
     <SUITE FILE_PATH="coverage/AuthTesting$auth.coverage" NAME="auth Coverage Results" MODIFIED="1744825545126" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/auth" />
     <SUITE FILE_PATH="coverage/AuthTesting$test_auth.coverage" NAME="test_auth Coverage Results" MODIFIED="1744825153413" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/auth_testing$main.coverage" NAME="main Coverage Results" MODIFIED="1744975157781" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/auth_testing$.coverage" NAME=" Coverage Results" MODIFIED="1745333973982" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/auth_testing$.coverage" NAME=" Coverage Results" MODIFIED="1745431268447" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
   </component>
 </project>

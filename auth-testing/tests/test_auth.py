@@ -1,7 +1,6 @@
 import os
 import pytest
 import auth.auth as auth
-from models.user import User
 
 # Setup: Replace the users.json file with a temporary file for testing
 # Tear down: Restore original contents
