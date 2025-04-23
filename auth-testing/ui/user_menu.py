@@ -6,6 +6,7 @@ def user_menu(user):
         print(f'\nWelcome, {user.username}!')
         print(f'Account holder since {user.created_on.strftime("%B %d, %Y").replace(" 0", " ")}\n')
         print('Menu')
+        print('====')
         print('1. Change password')
         print('2. Delete account')
         print('3. Log out\n')
@@ -15,6 +16,8 @@ def user_menu(user):
         if choice == '1':
             confirm = input('Are you sure you want to change your password? (y/n): ')
             if confirm.lower() == 'y':
+                print('\nChanging password')
+                print('======================')
                 current = getpass.getpass('Enter current password: ')
                 # Validate current password before continuing
                 if not change_password(user, current, None):
@@ -34,7 +37,7 @@ def user_menu(user):
 
                 # Update password now that it's confirmed valid
                 if change_password(user, current, new1):
-                    print('✅ Password changed successfully.')
+                    print('\n✅ Password changed successfully.')
                 else:
                     print('❌ Failed to update password.')
 

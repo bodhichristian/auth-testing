@@ -10,6 +10,7 @@ from auth.auth import create_account, login, username_taken
 def main_menu():
     while True:
         print('\nMain Menu')
+        print('=========')
         print('1. Create account')
         print('2. Log in')
         print('3. Exit\n')
@@ -37,6 +38,8 @@ def handle_create_account():
     password = None # Clear from memory
 
 def handle_login():
+    print('\nLogin')
+    print('=====')
     username = input('Username: ')
     password = getpass.getpass('Password: ')
     user = login(username, password)
