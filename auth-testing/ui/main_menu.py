@@ -9,7 +9,8 @@ from auth.auth import create_account, login, username_taken
 
 def main_menu():
     while True:
-        print('\n1. Create account')
+        print('\nMain Menu')
+        print('1. Create account')
         print('2. Log in')
         print('3. Exit\n')
         choice = input('Select an option: ')
@@ -43,6 +44,7 @@ def handle_login():
     if user:
         print('\n🔑 Login successful.')
         token = generate_token(user.id)
+        print(f'{token}')
         start_session(token)
     else:
         print('\n❌ Login failed.')

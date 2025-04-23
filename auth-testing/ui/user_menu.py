@@ -4,7 +4,7 @@ import getpass
 def user_menu(user):
     while True:
         print(f'\nWelcome, {user.username}!')
-        print(f'Account holder since {user.created_on}\n')
+        print(f'Account holder since {user.created_on.strftime("%B %d, %Y").replace(" 0", " ")}\n')
         print('Menu')
         print('1. Delete account')
         print('2. Log out\n')
@@ -22,6 +22,7 @@ def user_menu(user):
                     print('❌ Incorrect password. Account not deleted.')
 
         elif choice == '2':
+            user = None
             print('👋 Logged out.')
             break
 
