@@ -56,6 +56,19 @@ def login(username, password):
         return user
     return None
 
+def change_password(user, current_password, new_password=None):
+    users = _load_users()
+    existing_user = users.get(user.username)
+
+    if not existing_user or existing_user.password_hash != _hash_password(current_password):
+        return False
+
+    if new_password:
+        existing_user.password_hash = _hash_password(new_password)
+        _save_users(users)
+
+    return True
+
 def delete_account(username, password):
     users = _load_users()
     user = users.get(username)
