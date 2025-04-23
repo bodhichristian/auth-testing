@@ -22,7 +22,6 @@ def user_menu(user):
                     print('❌ Incorrect password. Account not deleted.')
 
         elif choice == '2':
-            user = None
             print('👋 Logged out.')
             break
 

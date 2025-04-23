@@ -44,7 +44,6 @@ def handle_login():
     if user:
         print('\n🔑 Login successful.')
         token = generate_token(user.id)
-        print(f'{token}')
         start_session(token)
     else:
         print('\n❌ Login failed.')
