@@ -21,12 +21,14 @@ def main_menu():
         elif choice == '2':
             handle_login()
         elif choice == '3':
-            print('✌️ Goodbye\n')
+            print('\n✌️ Goodbye\n')
             break
         else:
             print('Please select one of the available options.\n')
 
 def handle_create_account():
+    print('\nCreate account')
+    print('=============')
     username = auth.create_username()
     password = auth.create_password()
 

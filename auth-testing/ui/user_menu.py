@@ -4,7 +4,7 @@ import getpass
 def user_menu(user):
     while True:
         print(f'\nWelcome, {user.username}!')
-        print(f'Account holder since {user.created_on.strftime("%B %d, %Y").replace(" 0", " ")}\n')
+        print(f'User since {user.created_on.strftime("%B %d, %Y").replace(" 0", " ")}\n')
         print('Menu')
         print('====')
         print('1. Change password')
