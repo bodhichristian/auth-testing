@@ -1,11 +1,11 @@
 import uuid
-from datetime import datetime, date
+from datetime import date
 
 class User:
-    def __init__(self, username: str, password_hash: str, id: str = str(uuid.uuid4()), created_on: date = None):
+    def __init__(self, username: str, password_hash: str, id: str =None, created_on: date = None):
         self.username = username
         self.password_hash = password_hash
-        self.id =id
+        self.id = id or str(uuid.uuid4())
         self.created_on = created_on or date.today()
 
     def to_dict(self):
