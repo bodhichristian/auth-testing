@@ -19,12 +19,11 @@ def test_create_account():
     password = 'password'
 
     auth.create_account(username, password)
-
-    # Verify that the user has been added to the file
     users = auth._load_users()
+
     assert username in users
     assert users[username].username == username
-    assert users[username].password_hash != password  # Password should be hashed
+    assert users[username].password_hash != password
     assert users[username].created_on is not None
 
 def test_create_account_with_existing_username():
@@ -32,7 +31,7 @@ def test_create_account_with_existing_username():
     password = 'password'
 
     auth.create_account(username, password)
-    # Try to create the account again, should fail
+
     assert not auth.create_account(username, password)
 
 def test_create_account_with_blank_username():
@@ -88,12 +87,9 @@ def test_account_deletion():
     auth.create_account(username, password)
     assert auth.login(username, password)
 
-    # Check that the user exists before deletion
     users = auth._load_users()
     assert username in users
-
     assert auth.delete_account(username, password)
 
-    # Verify that the user has been deleted
     users = auth._load_users()
     assert username not in users
