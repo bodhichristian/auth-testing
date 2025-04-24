@@ -96,7 +96,6 @@ def _load_users():
     with open(USERS_FILE, "r") as f:
         try:
             users_data = json.load(f)
-            # Convert dictionaries into User objects
             return {user_data["username"]: User.from_dict(user_data) for user_data in users_data}
         except json.JSONDecodeError:
             print('⚠️ [AUTH] Error: users.json cannot be read.')
