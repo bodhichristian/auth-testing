@@ -1,7 +1,6 @@
 # ui/main_menu.py
 
 import getpass
-
 import auth.auth as auth
 from auth.session import start_session
 from auth.token import generate_token
