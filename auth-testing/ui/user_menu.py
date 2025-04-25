@@ -9,7 +9,8 @@ def user_menu(user):
         print('====')
         print('1. Change password')
         print('2. Delete account')
-        print('3. Log out\n')
+        print('3. Apply for administrator account')
+        print('4. Log out\n')
 
         choice = input('Select an option: ')
 
@@ -52,6 +53,9 @@ def user_menu(user):
                     print('❌ Incorrect password. Account not deleted.')
 
         elif choice == '3':
+            # admin application logic
+
+        elif choice == '4':
             print('👋 Logged out.')
             break
 
