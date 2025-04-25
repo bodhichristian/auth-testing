@@ -54,6 +54,16 @@ def user_menu(user):
 
         elif choice == '3':
             # admin application logic
+            print('\nApply for administrator account')
+            print('===============================\n')
+            print('1. Request account upgrade')
+            print('2. Exit\n')
+
+            choice = input('Select an option: ')
+            if choice == '1':
+                print('📬 Request for administrator account submitted.')
+            if choice == '2':
+                break
 
         elif choice == '4':
             print('👋 Logged out.')
