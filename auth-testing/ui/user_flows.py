@@ -1,5 +1,34 @@
-from auth.auth import delete_account, change_password
 import getpass
+import auth.auth as auth
+from auth.session import start_session
+from auth.token import generate_token
+
+def handle_create_account():
+    print('\nCreate account')
+    print('=============')
+    username = auth.create_username()
+    password = auth.create_password()
+
+    if auth.create_account(username, password):
+        print('\n\n✅ Account created.')
+    else:
+        print('❌ Account not created. Please try again.')
+
+    password = None # Clear from memory
+
+def handle_login():
+    print('\nLogin')
+    print('=====')
+    username = input('Username: ')
+    password = getpass.getpass('Password: ')
+    user = auth.login(username, password)
+
+    if user:
+        print('\n🔑 Login successful.')
+        token = generate_token(user.id)
+        start_session(token)
+    else:
+        print('\n❌ Login failed.')
 
 def show_main_menu(user):
     print(f'\nWelcome, {user.username}!')
