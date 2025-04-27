@@ -4,11 +4,7 @@ import ui.user_flows as flow
 
 def main_menu():
     while True:
-        print('\nMain Menu')
-        print('=========')
-        print('1. Create account')
-        print('2. Log in')
-        print('3. Exit\n')
+        flow.show_main_menu()
         choice = input('Select an option: ')
 
         if choice == '1':

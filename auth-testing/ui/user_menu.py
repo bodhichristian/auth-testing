@@ -2,7 +2,7 @@ from ui import user_flows as flow
 
 def user_menu(user):
     while True:
-        flow.show_main_menu(user)
+        flow.show_user_menu(user)
         choice = input('Select an option: ')
 
         if choice == '1':
