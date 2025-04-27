@@ -44,8 +44,9 @@ def show_user_menu(user):
     print('====')
     print('1. Change password')
     print('2. Delete account')
-    print('3. Apply for administrator account')
-    print('4. Log out\n')
+    print('3. View tasks')
+    print('4. Apply for administrator account')
+    print('5. Log out\n')
 
 def confirm(action_name):
     confirm = input(f'Are you sure you want to {action_name}? (y/n): ')
@@ -94,3 +95,5 @@ def apply_for_admin_flow(user):
         print('📬 Request for administrator account submitted.')
     elif choice == '2':
         print('Returning to main menu.')
+
+
