@@ -37,17 +37,6 @@ def handle_login():
     else:
         print('\n❌ Login failed.')
 
-def show_user_menu(user):
-    print(f'\nWelcome, {user.username}!')
-    print(f'User since {user.created_on.strftime("%B %d, %Y").replace(" 0", " ")}\n')
-    print('Menu')
-    print('====')
-    print('1. Change password')
-    print('2. Delete account')
-    print('3. View tasks')
-    print('4. Apply for administrator account')
-    print('5. Log out\n')
-
 def confirm(action_name):
     confirm = input(f'Are you sure you want to {action_name}? (y/n): ')
     return confirm.lower() == 'y'
