@@ -24,8 +24,9 @@ def create_task_flow(user):
         title = input('Task title: ')
         description = input('Task description: ')
 
-        task = Task(title, description, user.id)
-
+        task = Task(title = title, description: description, created_by: user.id)
+        tasks = _load_tasks()
+        tasks[user.id] = task
         break
 
 
