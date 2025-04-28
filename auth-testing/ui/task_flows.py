@@ -1,4 +1,6 @@
 
+TASKS_FILE = 'tasks.json'
+
 def show_task_menu(user):
     print('\nTasks')
     print('=====')
@@ -25,3 +27,22 @@ def create_task_flow(user):
         task = Task(title, description, user.id)
 
         break
+
+
+# --- Internal Helpers ---
+def _load_tasks():
+    if not os.path.exists(TASKS_FILE):
+        return {}
+    with open(TASKS_FILE, 'r') as f:
+        try:
+            task_data = json.load(f)
+            return {task_data['id']: Task.from_dict(task_data) for task in task_data}
+        except json.JSONDecodeError:
+            print('⚠️ [AUTH] Error: tasks.json cannot be read.')
+            return {}
+
+def _save_tasks(tasks):
+    task_data = [task.to_dict() for task in tasks.values()]
+    with open(USERS_FILE, 'w') as f:
+        json.dump(task_data, f)
+

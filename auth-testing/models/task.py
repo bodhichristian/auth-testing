@@ -11,3 +11,26 @@ class Task:
         self.id = id or str(uuid.uuid4())
         self.created_on = created_on or date.today()
         self.due_date = due_date
+
+    def to_dict(self):
+        return {
+            'title': self.titledescription,
+            'description': self.description,
+            'created_by': self.created_by,
+            'assigned_to': self.assigned_to,
+            'id': self.id,
+            'created_on': self.created_on.isoformat()
+            'due_date': self.due_date.isoformat() if self.due_date else None
+        }
+
+    @staticmethod
+    def from_dict(data: dict):
+        return User(
+            title=data.get('title'),
+            description=data.get('description'),
+            created_by=data.get('created_by'),
+            assigned_to=data.get('assigned_to'),
+            id=data.get('id'),
+            created_on=data.get('created_on'),
+            due_date=data.get('due_date')
+        )
