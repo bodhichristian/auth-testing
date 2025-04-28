@@ -1,5 +1,5 @@
 from ui import user_flows as ux
-from ui import task_flows as tasks
+from tasks import task_manager as tasks
 
 # this is a reminder to refactor the above modules
 
@@ -19,7 +19,6 @@ def user_menu(user):
 
         elif choice == '3':
             tasks.show_task_menu(user)
-
 
         elif choice == '4':
             ux.apply_for_admin_flow(user)
