@@ -1,3 +1,6 @@
+import os
+import json
+from models.task import Task
 
 TASKS_FILE = 'tasks.json'
 
@@ -24,9 +27,10 @@ def create_task_flow(user):
         title = input('Task title: ')
         description = input('Task description: ')
 
-        task = Task(title = title, description: description, created_by: user.id)
+        task = Task(title=title, description=description, creator_id=user.id)
         tasks = _load_tasks()
         tasks[user.id] = task
+        _save_tasks(tasks)
         break
 
 
@@ -44,6 +48,6 @@ def _load_tasks():
 
 def _save_tasks(tasks):
     task_data = [task.to_dict() for task in tasks.values()]
-    with open(USERS_FILE, 'w') as f:
+    with open(TASKS_FILE, 'w') as f:
         json.dump(task_data, f)
 
