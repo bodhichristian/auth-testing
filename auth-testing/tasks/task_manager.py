@@ -4,12 +4,6 @@ from models.task import Task
 
 TASKS_FILE = 'tasks.json'
 
-
-
-
-
-
-# --- Internal Helpers ---
 def _load_tasks():
     if not os.path.exists(TASKS_FILE):
         return {}
@@ -18,7 +12,7 @@ def _load_tasks():
             task_data = json.load(f)
             return {task['id']: Task.from_dict(task) for task in task_data}
         except json.JSONDecodeError:
-            print('⚠️ [AUTH] Error: tasks.json cannot be read.')
+            print('⚠️ [TASK] Error: tasks.json cannot be read.')
             return {}
 
 def _save_tasks(tasks):
