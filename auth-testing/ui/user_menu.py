@@ -4,7 +4,15 @@ from tasks import task_manager as tm
 
 def user_menu(user):
     while True:
-        show_user_menu(user)
+        print(f'\nWelcome, {user.username}!')
+        print(f'User since {user.created_on.strftime("%B %d, %Y").replace(" 0", " ")}\n')
+        print('Menu')
+        print('====')
+        print('1. Tasks')
+        print('2. Change password')
+        print('3. Delete account')
+        print('4. Apply for administrator account')
+        print('5. Log out\n')
         choice = input('Select an option: ')
 
         if choice == '1':
@@ -28,14 +36,3 @@ def user_menu(user):
                 break
         else:
             print('Please select one of the available options.')
-
-def show_user_menu(user):
-    print(f'\nWelcome, {user.username}!')
-    print(f'User since {user.created_on.strftime("%B %d, %Y").replace(" 0", " ")}\n')
-    print('Menu')
-    print('====')
-    print('1. Tasks')
-    print('2. Change password')
-    print('3. Delete account')
-    print('4. Apply for administrator account')
-    print('5. Log out\n')
