@@ -3,13 +3,6 @@ import auth.auth as auth
 from auth.session import start_session
 from auth.token import generate_token
 
-def show_main_menu():
-    print('\nMain Menu')
-    print('=========')
-    print('1. Create account')
-    print('2. Log in')
-    print('3. Exit\n')
-
 def handle_create_account():
     print('\nCreate account')
     print('=============')

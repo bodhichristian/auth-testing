@@ -4,7 +4,7 @@ from tasks import task_manager as tm
 
 def user_menu(user):
     while True:
-        uf.show_user_menu(user)
+        show_user_menu(user)
         choice = input('Select an option: ')
 
         if choice == '1':

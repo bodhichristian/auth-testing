@@ -1,16 +1,20 @@
 # ui/main_menu.py
 
-import ui.user_flows as flow
+from ui.user_flows import handle_create_account, handle_login
 
 def main_menu():
     while True:
-        flow.show_main_menu()
+        print('\nMain Menu')
+        print('=========')
+        print('1. Create account')
+        print('2. Log in')
+        print('3. Exit\n')
         choice = input('Select an option: ')
 
         if choice == '1':
-            flow.handle_create_account()
+            handle_create_account()
         elif choice == '2':
-            flow.handle_login()
+            handle_login()
         elif choice == '3':
             print('\n✌️ Goodbye\n')
             break

@@ -13,7 +13,7 @@ def show_task_menu(user):
     if choice == '1':
         create_task_flow(user)
     if choice == '2':
-        view_assigned_tasks(user)
+        display_assigned_tasks(user)
     if choice == '3':
         return
 
@@ -31,7 +31,7 @@ def create_task_flow(user):
         tm._save_tasks(tasks)
         break
 
-def view_assigned_tasks(user):
+def display_assigned_tasks(user):
     tasks = tm._load_tasks()
     user_tasks = [task for task in tasks.values() if task.creator_id== user.id]
 
