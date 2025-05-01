@@ -1,5 +1,3 @@
-# ui/main_menu.py
-
 from ui.user_flows import handle_create_account, handle_login
 
 def main_menu():
