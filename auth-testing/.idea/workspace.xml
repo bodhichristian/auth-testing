@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2186454b-78e1-47e0-840f-784c1bf79f23" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/ui/main_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/main_menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks.json" beforeDir="false" afterPath="$PROJECT_DIR$/tasks.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/user_flows.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/user_flows.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/user_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/user_menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users.json" beforeDir="false" afterPath="$PROJECT_DIR$/users.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +65,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -188,7 +192,7 @@
       <workItem from="1744802771804" duration="5026000" />
       <workItem from="1744895213110" duration="89000" />
       <workItem from="1744895313400" duration="17676000" />
-      <workItem from="1745249951061" duration="42556000" />
+      <workItem from="1745249951061" duration="46600000" />
     </task>
     <servers />
   </component>

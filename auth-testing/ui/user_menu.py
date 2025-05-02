@@ -31,7 +31,7 @@ def user_menu(user):
             uf.apply_for_admin_flow(user)
 
         elif choice == '5':
-            if confirm('log out'):
+            if uf.confirm('log out'):
                 print('👋 Logged out.')
                 break
         else:

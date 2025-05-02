@@ -21,14 +21,10 @@ def create_task_flow(user):
     while True:
         print('\nCreate task')
         print('===========')
-
         title = input('Task title: ')
         description = input('Task description: ')
 
-        task = Task(title=title, description=description, creator_id=user.id)
-        tasks = tm._load_tasks()
-        tasks[user.id] = task
-        tm._save_tasks(tasks)
+        tm.create_task(title, description, user.id)
         break
 
 def display_assigned_tasks(user):

@@ -72,7 +72,7 @@ def apply_for_admin_flow(user):
     print('1. Request account upgrade')
     print('2. Exit\n')
     choice = input('Select an option: ')
-    
+
     if choice == '1':
         print('📬 Request for administrator account submitted.')
     elif choice == '2':

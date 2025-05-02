@@ -4,6 +4,15 @@ from models.task import Task
 
 TASKS_FILE = 'tasks.json'
 
+def create_task(title, description, creator_id):
+    task = Task(title=title, description=description, creator_id=creator_id)
+    tasks = _load_tasks()
+    tasks[task.id] = task
+    _save_tasks(tasks)
+
+
+
+# --- Internal Helpers ---
 def _load_tasks():
     if not os.path.exists(TASKS_FILE):
         return {}
