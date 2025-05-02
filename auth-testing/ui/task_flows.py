@@ -1,6 +1,7 @@
 from models.user import User
 from models.task import Task
 from tasks import task_manager as tm
+from ui.format.table import print_table
 
 def show_task_menu(user):
     print('\nTasks')
@@ -28,29 +29,7 @@ def create_task_flow(user):
         break
 
 def display_assigned_tasks(user):
-    user_tasks = tm.fetch_tasks_for(user)
-
     headers = ['Title', 'Description', 'Created On', 'Due Date', 'Completed']
     column_widths = [20, 30, 15, 15, 10]
-
-    # row formatter
-    def format_row(items):
-        return "| " + " | ".join(f"{str(item)[:width]:<{width}}" for item, width in zip(items, column_widths)) + " |"
-
-    # title
-    print('\n\nYour tasks')
-    print('==========')
-
-    # header row
-    print("-" * (sum(column_widths) + len(column_widths) * 3 + 1))
-    print(format_row(headers))
-    print("-" * (sum(column_widths) + len(column_widths) * 3 + 1))
-
-    # task list
-    for task in user_tasks:
-        due = task.due_date if task.due_date else "N/A"
-        complete = 'Y' if task.completed else 'N'
-        print(format_row([task.title, task.description, task.created_on, due, complete]))
-
-    # Bottom border
-    print("-" * (sum(column_widths) + len(column_widths) * 3 + 1))
+    rows = tm.get_task_table_data(user)
+    print_table("Your tasks", headers, rows, column_widths)

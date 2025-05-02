@@ -15,6 +15,22 @@ def fetch_tasks_for(user):
     user_tasks = [task for task in tasks.values() if task.creator_id == user.id]
     return user_tasks
 
+def get_task_table_data(user):
+    tasks = fetch_tasks_for(user)
+    rows = []
+
+    for task in tasks:
+        rows.append([
+            task.title,
+            task.description,
+            task.created_on,
+            task.due_date or "N/A",
+            'Y' if task.completed else 'N'
+        ])
+
+    return rows
+
+
 # --- Internal Helpers ---
 def _load_tasks():
     if not os.path.exists(TASKS_FILE):
