@@ -23,7 +23,7 @@ def user_menu(user):
                 uf.change_password_flow(user)
 
         elif choice == '3':
-            if confirm('delete your account'):
+            if uf.confirm('delete your account'):
                 uf.delete_account_flow(user)
                 break
 

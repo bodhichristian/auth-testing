@@ -28,7 +28,7 @@ def create_task_flow(user):
         break
 
 def display_assigned_tasks(user):
-    tm.fetch_tasks_for(user)
+    user_tasks = tm.fetch_tasks_for(user)
 
     headers = ['Title', 'Description', 'Created On', 'Due Date', 'Completed']
     column_widths = [20, 30, 15, 15, 10]
