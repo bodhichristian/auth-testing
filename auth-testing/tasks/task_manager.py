@@ -10,7 +10,10 @@ def create_task(title, description, creator_id):
     tasks[task.id] = task
     _save_tasks(tasks)
 
-
+def fetch_tasks_for(user):
+    tasks = tm._load_tasks()
+    user_tasks = [task for task in tasks.values() if task.creator_id == user.id]
+    return user_tasks
 
 # --- Internal Helpers ---
 def _load_tasks():
