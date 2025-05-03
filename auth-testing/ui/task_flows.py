@@ -1,3 +1,4 @@
+from models import user
 from models.user import User
 from models.task import Task
 from tasks import task_manager as tm
@@ -33,9 +34,9 @@ def display_assigned_tasks(user):
     column_widths = [20, 30, 10, 10, 10]
     rows = tm.get_task_table_data(user)
     print_table("Your tasks", headers, rows, column_widths)
-    show_task_options()
+    show_task_options(user)
 
-def show_task_options():
+def show_task_options(user):
     print('\n\nWhat would you like to do?')
     print('1. Mark a task complete')
     print('2. Edit a task')
@@ -47,23 +48,22 @@ def show_task_options():
 
         if choice == '1':
             # task completion logic
-            print('\n\nfeaturecoming soon\n\n')
+            print('\n\nFeature coming 🔜\n\n')
             continue
 
         elif choice == '2':
             # edit task logic
-            print('\n\nfeaturecoming soon\n\n')
+            print('\n\nFeature coming 🔜\n\n')
             continue
 
         elif choice == '3':
             # delete task logic
-            print('\n\nfeaturecoming soon\n\n')
+            print('\n\nFeature coming 🔜\n\n')
             continue
 
         elif choice == '4':
-            continue
+            show_task_menu(user)
 
         else:
             print(f'\n\n❌ {choice} is not an available option\n\n')
-            # show_task_options()
             continue
