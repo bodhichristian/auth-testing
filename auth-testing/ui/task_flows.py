@@ -47,22 +47,21 @@ def show_task_options():
 
         if choice == '1':
             # task completion logic
-            print('coming soon')
-            return
+            print('\n\nfeaturecoming soon\n\n')
+            continue
 
         elif choice == '2':
             # edit task logic
-            print('coming soon')
-            return
+            print('\n\nfeaturecoming soon\n\n')
+            continue
 
         elif choice == '3':
             # delete task logic
-            print('coming soon')
-            return
+            print('\n\nfeaturecoming soon\n\n')
+            continue
 
         elif choice == '4':
-            return
-
+            continue
 
         else:
             print(f'\n\n❌ {choice} is not an available option\n\n')
