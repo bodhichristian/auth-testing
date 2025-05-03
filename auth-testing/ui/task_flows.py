@@ -38,8 +38,9 @@ def display_assigned_tasks(user):
 def show_task_options():
     print('\n\nWhat would you like to do?')
     print('1. Mark a task complete')
-    print('2. Delete a task')
-    print('3. Back to Task Menu')
+    print('2. Edit a task')
+    print('3. Delete a task')
+    print('4. Back to Task Menu')
 
     while True:
         choice = input('Select an option: ')
@@ -50,12 +51,19 @@ def show_task_options():
             return
 
         elif choice == '2':
-            # delete task logic
+            # edit task logic
             print('coming soon')
             return
 
         elif choice == '3':
+            # delete task logic
+            print('coming soon')
             return
+
+        elif choice == '4':
+            return
+
+
         else:
             print(f'\n\n❌ {choice} is not an available option\n\n')
             # show_task_options()
