@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2186454b-78e1-47e0-840f-784c1bf79f23" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks/task_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/task_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/format/table.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/format/table.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/task_flows.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/task_flows.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -191,12 +189,23 @@
       <workItem from="1744802771804" duration="5026000" />
       <workItem from="1744895213110" duration="89000" />
       <workItem from="1744895313400" duration="17676000" />
-      <workItem from="1745249951061" duration="49245000" />
+      <workItem from="1745249951061" duration="51631000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
