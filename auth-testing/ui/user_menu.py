@@ -6,7 +6,7 @@ def user_menu(user):
     print(f'\nWelcome, {user.username}!')
     print(f'User since {user.created_on.strftime("%B %d, %Y").replace(" 0", " ")}\n')
     while True:
-        print('Menu')
+        print('\nMenu')
         print('====')
         print('1. Tasks')
         print('2. Change password')
