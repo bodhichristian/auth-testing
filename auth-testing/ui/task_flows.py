@@ -27,7 +27,9 @@ def create_task_flow(user):
         description = input('Task description: ')
 
         tm.create_task(title, description, user.id)
+        print('📋 Task created')
         break
+    show_task_menu(user)
 
 def display_assigned_tasks(user):
     headers = ['Title', 'Description', 'Created On', 'Due Date', 'Completed']
