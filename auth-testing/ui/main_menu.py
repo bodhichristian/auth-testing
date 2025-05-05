@@ -2,7 +2,7 @@ from ui.user_flows import handle_create_account, handle_login
 
 def main_menu():
     while True:
-        print('\nMain Menu')
+        print('\n\n\nMain Menu')
         print('=========')
         print('1. Create account')
         print('2. Log in')
